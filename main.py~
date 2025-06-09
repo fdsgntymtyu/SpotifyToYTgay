@@ -68,7 +68,7 @@ except Exception as e:
     sys.exit(1)
 
 # Создание файла для записи пропущенных треков
-skipped_tracks_file = '../skipped_tracks.txt'
+skipped_tracks_file = 'skipped_tracks.txt'
 with open(skipped_tracks_file, 'w', encoding='utf-8') as f:
     f.write("Пропущенные треки:\n")
 
@@ -226,7 +226,7 @@ else:
     print(YELLOW + "Ни один трек не был добавлен, так как ничего не найдено." + RESET)
 
 # Запись списка неудачных треков в файл, исключая успешно добавленные
-failed_tracks_file = '../failed_tracks.txt'
+failed_tracks_file = 'failed_tracks.txt'
 with open(failed_tracks_file, 'w', encoding='utf-8') as f:
     filtered_failed_tracks = [track for track in failed_tracks if not any(success in track for success in successfully_added_tracks)]
     if filtered_failed_tracks:
